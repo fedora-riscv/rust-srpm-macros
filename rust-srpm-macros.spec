@@ -1,6 +1,6 @@
 Name:           rust-srpm-macros
 Version:        4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        RPM macros for building Rust source packages
 
 License:        MIT
@@ -23,6 +23,9 @@ install -D -p -m 0644 -t %{buildroot}%{_rpmconfigdir}/macros.d data/macros.rust-
 %{_rpmconfigdir}/macros.d/macros.rust-srpm
 
 %changelog
+* Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Sat Jul 08 2017 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 4-2
 - Include license
 
