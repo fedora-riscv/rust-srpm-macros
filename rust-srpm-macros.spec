@@ -16,11 +16,11 @@ BuildArch:      noarch
 %autosetup -n rust2rpm-%{version}
 
 %install
-install -D -p -m 0644 -t %{buildroot}%{_rpmconfigdir}/macros.d data/macros.rust-srpm
+install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
 
 %files
 %license LICENSE
-%{_rpmconfigdir}/macros.d/macros.rust-srpm
+%{_rpmmacrodir}/macros.rust-srpm
 
 %changelog
 * Mon Jan 08 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 5-1
