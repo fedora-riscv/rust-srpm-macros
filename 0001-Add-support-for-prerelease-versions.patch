@@ -1,0 +1,42 @@
+From 769506caf08edb5ea2342d9add22e4db1b347375 Mon Sep 17 00:00:00 2001
+From: Igor Gnatenko <ignatenkobrain@fedoraproject.org>
+Date: Sat, 26 Jan 2019 08:33:37 +0100
+Subject: [PATCH] Add support for prerelease versions
+
+Signed-off-by: Igor Gnatenko <ignatenkobrain@fedoraproject.org>
+---
+ data/macros.rust-srpm | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/data/macros.rust-srpm b/data/macros.rust-srpm
+index f2bae9d..bd21cb5 100644
+--- a/data/macros.rust-srpm
++++ b/data/macros.rust-srpm
+@@ -1 +1,24 @@
+ %rust_arches x86_64 i686 armv7hl aarch64 ppc64 ppc64le s390x
++%__crates_url https://crates.io/api/v1/crates/
++%crates_source %{lua:
++    local crate = rpm.expand('%1')
++    local version = rpm.expand('%2')
++    local url = rpm.expand('%__crates_url')
++\
++    if crate == '%1' then
++        crate = rpm.expand('%real_crate')
++    end
++    if crate == '%real_crate' then
++        crate = rpm.expand('%crate')
++    end
++    if crate == '%crate' then
++        crate = rpm.expand('%name')
++    end
++\
++    if version == '%2' then
++        version = rpm.expand('%version')
++    end
++    version = version:gsub('~', '-')
++\
++    print(url .. crate .. '/' .. version .. '/download#/' .. crate .. '-' .. version .. '.crate')
++}
+-- 
+2.20.1
+

@@ -1,11 +1,12 @@
 Name:           rust-srpm-macros
 Version:        6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        RPM macros for building Rust source packages
 
 License:        MIT
 URL:            https://pagure.io/fedora-rust/rust2rpm
 Source0:        https://releases.pagure.org/fedora-rust/rust2rpm/rust2rpm-%{version}.tar.xz
+Patch0001:      0001-Add-support-for-prerelease-versions.patch
 
 BuildArch:      noarch
 
@@ -23,6 +24,9 @@ install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
 %{_rpmmacrodir}/macros.rust-srpm
 
 %changelog
+* Sat Jan 26 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 6-2
+- Add support for %%crates_source
+
 * Sun Sep 02 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 6-1
 - Update to 6
 
