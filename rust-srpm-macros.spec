@@ -14,7 +14,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%autosetup -n rust2rpm-%{version}
+%autosetup -n rust2rpm-%{version} -p1
 
 %install
 install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
