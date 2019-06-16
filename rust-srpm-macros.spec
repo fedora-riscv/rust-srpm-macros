@@ -1,12 +1,11 @@
 Name:           rust-srpm-macros
-Version:        9
-Release:        3%{?dist}
+Version:        10
+Release:        1%{?dist}
 Summary:        RPM macros for building Rust source packages
 
 License:        MIT
 URL:            https://pagure.io/fedora-rust/rust2rpm
-Source0:        https://releases.pagure.org/fedora-rust/rust2rpm/rust2rpm-%{version}.tar.xz
-Patch0001:      0001-Implement-__cargo_skip_build.patch
+Source:         https://releases.pagure.org/fedora-rust/rust2rpm/rust2rpm-%{version}.tar.xz
 
 BuildArch:      noarch
 
@@ -26,6 +25,9 @@ install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
 %{_rpmmacrodir}/macros.rust-srpm
 
 %changelog
+* Sun Jun 16 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 10-1
+- Update to 10
+
 * Sat Jun 08 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 9-3
 - Implement %%__cargo_skip_build
 
