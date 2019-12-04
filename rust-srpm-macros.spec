@@ -1,6 +1,6 @@
 Name:           rust-srpm-macros
-Version:        10
-Release:        2%{?dist}
+Version:        11
+Release:        1%{?dist}
 Summary:        RPM macros for building Rust source packages
 
 License:        MIT
@@ -14,8 +14,6 @@ BuildArch:      noarch
 
 %prep
 %autosetup -n rust2rpm-%{version} -p1
-# https://pagure.io/koji/issue/659
-sed -i -e 's/i686/%%{ix86}/' data/macros.rust-srpm
 
 %install
 install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
@@ -25,6 +23,9 @@ install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
 %{_rpmmacrodir}/macros.rust-srpm
 
 %changelog
+* Wed Dec 04 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 11-1
+- Update to 11
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 10-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
