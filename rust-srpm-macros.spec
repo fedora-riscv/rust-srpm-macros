@@ -1,5 +1,5 @@
 Name:           rust-srpm-macros
-Version:        12
+Version:        13
 Release:        1%{?dist}
 Summary:        RPM macros for building Rust source packages
 
@@ -25,6 +25,9 @@ install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust-srpm
 %{_rpmmacrodir}/macros.rust-srpm
 
 %changelog
+* Fri Dec 20 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 13-1
+- Update to 13
+
 * Fri Dec 13 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 12-1
 - Update to 12
 
