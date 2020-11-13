@@ -1,11 +1,11 @@
 Name:           rust-srpm-macros
-Version:        15
-Release:        2%{?dist}
+Version:        16
+Release:        1%{?dist}
 Summary:        RPM macros for building Rust source packages
 
 License:        MIT
 URL:            https://pagure.io/fedora-rust/rust2rpm
-Source:         https://releases.pagure.org/fedora-rust/rust2rpm/rust2rpm-%{version}.tar.xz
+Source:         https://pagure.io/fedora-rust/rust2rpm/archive/v16/rust2rpm-v%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -13,7 +13,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%autosetup -n rust2rpm-%{version} -p1
+%autosetup -n rust2rpm-v%{version} -p1
 # https://pagure.io/koji/issue/659
 sed -i -e 's/i686/%%{ix86}/' data/macros.rust-srpm
 
