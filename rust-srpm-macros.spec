@@ -5,7 +5,7 @@ Summary:        RPM macros for building Rust source packages
 
 License:        MIT
 URL:            https://pagure.io/fedora-rust/rust2rpm
-Source:         https://pagure.io/fedora-rust/rust2rpm/archive/v16/rust2rpm-v%{version}.tar.gz
+Source:         https://pagure.io/fedora-rust/rust2rpm/archive/v%{version}/rust2rpm-v%{version}.tar.gz
 
 BuildArch:      noarch
 
