@@ -1,0 +1,3 @@
+PURPOSE of /tools/rust-srpm-macros/Sanity/check-rust-srpm-macros
+Description: Test that the arch running the test is contained in the %rust_arches macro
+Author: Jesus Checa <jcheca@redhat.com>

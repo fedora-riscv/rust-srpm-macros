@@ -1,0 +1,14 @@
+summary:
+  Test that the arch running the test is contained in the %rust_arches macro
+description: ''
+contact:
+  - Jesus Checa <jcheca@redhat.com>
+component:
+  - rust-srpm-macros
+test: ./runtest.sh
+framework: beakerlib
+recommend:
+  - rust-srpm-macros
+duration: 5m
+extra-summary: /tools/rust-srpm-macros/Sanity/check-rust-srpm-macro
+extra-task: /tools/rust-srpm-macros/Sanity/check-rust-srpm-macro
