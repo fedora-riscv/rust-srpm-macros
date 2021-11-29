@@ -1,5 +1,5 @@
 Name:           rust-srpm-macros
-Version:        19
+Version:        20
 Release:        %autorelease
 Summary:        RPM macros for building Rust source packages
 
